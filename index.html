@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa Foresight CAIXA — Tendências × Pilares</title>
+  <meta name="description" content="Mapa Foresight CAIXA — painel interativo de tendências por pilares e maturidade (Wardley Mapping)." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Mapa Foresight CAIXA — Tendências × Pilares</h1>
+    <div class="legenda">
+      <span class="pilar" style="--cor:#A05EB5">Cliente no centro</span>
+      <span class="pilar" style="--cor:#005CA9">Eficiência e rentabilidade</span>
+      <span class="pilar" style="--cor:#CEDC00">Tecnologia e inovação</span>
+      <span class="pilar" style="--cor:#FFB549">Pessoas, cultura e agilidade</span>
+      <span class="pilar" style="--cor:#00B3B8">Sustentabilidade e cidadania</span>
+      <span class="pilar" style="--cor:#FF6F40">Atuação em ecossistema</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="mapa" aria-label="Mapa de tendências">
+      <div class="eixo-vertical">Visibilidade para o Cliente</div>
+      <div class="grid">
+        <div class="tick v-top">Altamente visível</div>
+        <div class="tick v-bottom">Interface interna</div>
+        <div class="tick h-genesis">Genesis</div>
+        <div class="tick h-custom">Custom</div>
+        <div class="tick h-product">Product</div>
+        <div class="tick h-commodity">Commodity</div>
+        <div id="tendencias" class="tendencias" role="list"></div>
+      </div>
+    </section>
+
+    <aside class="painel" aria-live="polite">
+      <div class="legendinha">
+        <span class="pilar-mini" style="--cor:#A05EB5">Cliente no centro</span>
+        <span class="pilar-mini" style="--cor:#005CA9">Eficiência e rentabilidade</span>
+        <span class="pilar-mini" style="--cor:#CEDC00">Tecnologia e inovação</span>
+        <span class="pilar-mini" style="--cor:#FFB549">Pessoas, cultura e agilidade</span>
+        <span class="pilar-mini" style="--cor:#00B3B8">Sustentabilidade e cidadania</span>
+        <span class="pilar-mini" style="--cor:#FF6F40">Atuação em ecossistema</span>
+      </div>
+
+      <h2 id="tituloTendencia">Selecione uma tendência</h2>
+      <p><strong>Impacto no Cliente:</strong> <span id="impacto">—</span></p>
+      <p><strong>Riscos:</strong> <span id="riscos">—</span></p>
+      <p><strong>Oportunidades:</strong> <span id="oportunidades">—</span></p>
+      <p><strong>Status:</strong> <span id="status">—</span></p>
+      <p><strong>Alavancas de Inovação:</strong> <span id="alavancas">—</span></p>
+      <p><strong>Iniciativas Relacionadas:</strong> <span id="iniciativas">—</span></p>
+      <button id="savePositions">Salvar posições</button>
+    </aside>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    // Função de renderização das pílulas de tendências
+    (function render() {
+      const cont = document.getElementById('tendencias');
+      cont.innerHTML = '';
+      (window.tendencias || []).forEach((t, i) => {
+        const el = document.createElement('button');
+        el.className = 'pill';
+        el.setAttribute('role', 'listitem');
+        el.textContent = t.nome;
+        el.style.setProperty('--cor', t.cor);
+        el.style.left = t.x + '%';
+        el.style.top = t.y + '%';
+        el.setAttribute('draggable', true);
+        el.dataset.id = i;
+
+        el.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text', e.target.dataset.id);
+        });
+
+        el.addEventListener('dragover', (e) => {
+          e.preventDefault();
+        });
+
+        el.addEventListener('drop', (e) => {
+          const from = e.dataTransfer.getData('text');
+          const to = e.target.dataset.id;
+          if (from !== to) {
+            const fromEl = document.querySelector(`[data-id="${from}"]`);
+            const toEl = document.querySelector(`[data-id="${to}"]`);
+            [fromEl.style.left, toEl.style.left] = [toEl.style.left, fromEl.style.left];
+            [fromEl.style.top, toEl.style.top] = [toEl.style.top, fromEl.style.top];
+            savePositions(); // Salva após cada movimentação
+          }
+        });
+
+        cont.appendChild(el);
+      });
+    })();
+
+    // Função de salvar as posições
+    function savePositions() {
+      const positions = [];
+      document.querySelectorAll('.pill').forEach(el => {
+        positions.push({
+          nome: el.textContent,
+          cor: el.style.backgroundColor,
+          x: parseFloat(el.style.left),
+          y: parseFloat(el.style.top)
+        });
+      });
+      localStorage.setItem('positions', JSON.stringify(positions)); // Salvar no localStorage
+      alert('Posições salvas!');
+    }
+
+    // Ao clicar no botão de salvar, salva as posições
+    document.getElementById('savePositions').addEventListener('click', savePositions);
+  </script>
+</body>
+</html>

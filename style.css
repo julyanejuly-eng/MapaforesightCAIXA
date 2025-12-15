@@ -1,0 +1,59 @@
+/* ====== Estilos base ====== */
+* { box-sizing: border-box; }
+:root {
+  --azul-caixa:#005CA9;
+}
+body { font-family: "Segoe UI", Arial, sans-serif; margin:0; background:#f6f8fb; color:#2d3436; }
+header { background:#fff; border-bottom:3px solid var(--azul-caixa); padding:24px 12px; text-align:center; }
+header h1 { margin:0; color:var(--azul-caixa); font-weight:800; font-size:28px; letter-spacing:0.2px; }
+
+/* Legenda superior (linha única) */
+.legenda { display:flex; gap:8px; justify-content:center; flex-wrap:nowrap; overflow:auto; padding-bottom:2px; margin-top:14px; }
+.pilar { background: var(--cor); color:#fff; padding:8px 12px; border-radius:6px; font-weight:700; font-size:13px; white-space:nowrap; }
+
+/* Layout */
+main { display:flex; gap:20px; padding:20px; align-items:stretch; }
+.mapa { flex: 1 1 68%; position:relative; background:#fff; border-radius:12px; padding:20px 16px 32px; box-shadow:0 6px 16px rgba(0,0,0,.08); min-height:620px; }
+.painel { flex: 1 1 32%; background:#fff; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,.08); display:flex; flex-direction:column; gap:8px; }
+
+/* Mini legenda acima do painel (reduzida) */
+.legendinha { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px; }
+.pilar-mini { background: var(--cor); color:#fff; padding:4px 8px; border-radius:999px; font-size:11px; font-weight:700; }
+
+/* Eixos & grid */
+.eixo-vertical { position:absolute; left:10px; top:12px; writing-mode:vertical-rl; transform:rotate(180deg); color:#7a869a; font-weight:800; letter-spacing:.2px; }
+.grid { position:relative; height:540px; margin-left:36px; border:1px dashed #cfd6df; border-radius:10px;
+  background:
+    linear-gradient(90deg, transparent 24%, rgba(0,0,0,.045) 25%, transparent 26%),
+    linear-gradient(90deg, transparent 49%, rgba(0,0,0,.045) 50%, transparent 51%),
+    linear-gradient(90deg, transparent 74%, rgba(0,0,0,.045) 75%, transparent 76%),
+    linear-gradient(0deg, transparent 24%, rgba(0,0,0,.045) 25%, transparent 26%),
+    linear-gradient(0deg, transparent 49%, rgba(0,0,0,.045) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 74%, rgba(0,0,0,.045) 75%, transparent 76%);
+  background-size:25% 100%,25% 100%,25% 100%,100% 25%,100% 25%,100% 25%;
+  background-position:0 0,25% 0,50% 0,0 0,0 25%,0 50%;
+}
+.tick { position:absolute; color:#7a869a; font-size:12px; font-weight:800; }
+.v-top { top:6px; right:12px; }
+.v-bottom { bottom:6px; right:12px; }
+.h-genesis { bottom:-22px; left:7%; }
+.h-custom { bottom:-22px; left:32%; }
+.h-product { bottom:-22px; left:57%; }
+.h-commodity { bottom:-22px; left:82%; }
+
+/* Pílulas (tendências) */
+.tendencias { position:absolute; inset:0; }
+.pill {
+  position:absolute; left:12%; top:50%;
+  transform:translate(-50%, -50%);
+  background:var(--cor, var(--azul-caixa)); color:#fff;
+  border:none; border-radius:999px; padding:10px 14px;
+  font-weight:800; cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.pill:hover { transform:translate(-50%, -50%) scale(1.07); box-shadow:0 8px 18px rgba(0,0,0,.18); filter:saturate(1.05); }
+
+/* Painel de detalhes */
+.painel h2 { margin:6px 0 8px; color:var(--azul-caixa); font-weight:800; }
+.painel p { margin:6px 0; font-size:14px; line-height:1.5; }
