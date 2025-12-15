@@ -12,18 +12,20 @@
 body{margin:0;font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
 .app-header{padding:16px 20px;text-align:center}
 h1{margin:0 0 12px;font-size:26px;font-weight:800;color:#0F172A}
-.legend-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.legend-badge{display:flex;align-items:center;gap:8px;background:var(--card);border-radius:999px;padding:6px 12px;box-shadow:var(--shadow);font-size:12px}
-.legend-dot{width:10px;height:10px;border-radius:50%}
+.pillars-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.pillar-badge{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:999px;padding:6px 12px;box-shadow:var(--shadow);font-size:12px;
+  color:#fff;font-weight:800;min-height:28px}
+/* Colors will be set inline via JS using palette */
 
 main{display:grid;grid-template-columns: 1fr 300px;gap:16px;padding:0 20px 20px}
 .map-wrapper{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
-.map-area{position:relative;height:720px;border-radius:12px;background:#fff;overflow:hidden}
+.map-area{position:relative;height:620px;border-radius:12px;background:#fff;overflow:hidden}
 .grid{position:absolute;inset:24px 24px 32px 56px;border-radius:12px;border:1px dashed #E5E7EB}
 .grid::before,
 .grid::after{content:'';position:absolute;left:0;top:0;right:0;bottom:0;background:
   repeating-linear-gradient(to right, transparent, transparent 140px, rgba(0,0,0,.05) 141px, transparent 142px),
-  repeating-linear-gradient(to bottom, transparent, transparent 120px, rgba(0,0,0,.05) 121px, transparent 122px);
+  repeating-linear-gradient(to bottom, transparent, transparent 110px, rgba(0,0,0,.05) 111px, transparent 112px);
   border-radius:12px;pointer-events:none}
 
 .axis{position:absolute;color:var(--muted);font-size:12px}

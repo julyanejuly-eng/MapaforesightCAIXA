@@ -19,9 +19,10 @@
       "oportunidades": "Personalização e escala de CX; redução de esforço do cliente; novas receitas baseadas em dados.",
       "status": "Exploratória com pilotos",
       "alavancas": [
-        "Open Finance",
-        "APIs públicas",
-        "Identidade Digital"
+        "IA responsável e ética",
+        "Engenharia de prompts",
+        "Squads de inovação",
+        "Inovação aberta"
       ],
       "iniciativas": [
         "Explorar interoperabilidade com chatbots e IVR; preparar roteiros de negociação com agentes."
@@ -38,9 +39,10 @@
       "oportunidades": "Automação de processos e atendimento; design de jornadas personalizadas.",
       "status": "Em teste (laboratório)",
       "alavancas": [
-        "Inteligência aumentada",
+        "IA responsável e ética",
         "Engenharia de prompts",
-        "Governança de modelos"
+        "Laboratórios de experimentação (TEIA)",
+        "Upskilling (interno)"
       ],
       "iniciativas": [
         "Squad de IA – Automação de Processos Internos (2024)"
@@ -58,8 +60,9 @@
       "status": "Em escala inicial",
       "alavancas": [
         "Open Finance",
-        "Parcerias",
-        "APIs"
+        "Parcerias GovTech",
+        "Chamada de startups",
+        "Contratações inovadoras"
       ],
       "iniciativas": [
         "Roadmap Pix Automático",
@@ -77,9 +80,10 @@
       "oportunidades": "Monetização de dados; novos produtos baseados em IA.",
       "status": "Prioridade estratégica",
       "alavancas": [
-        "APIs",
-        "Consentimento granular",
-        "Parcerias Fintech"
+        "Open Finance",
+        "Sandbox regulatório",
+        "Inovação aberta",
+        "Chamada de startups"
       ],
       "iniciativas": [
         "Chamada de Startups – Gerenciador Financeiro PJ (2024)",
@@ -98,7 +102,9 @@
       "status": "Em escala",
       "alavancas": [
         "ESG by design",
-        "Parcerias público‑privadas"
+        "Parcerias público‑privadas",
+        "Chamada de startups",
+        "Programas de aceleração"
       ],
       "iniciativas": [
         "Chamada Startups para créditos sustentáveis"
@@ -115,9 +121,10 @@
       "oportunidades": "Receitas de serviços de tokenização; crédito com garantias tokenizadas.",
       "status": "Pilotos com parceiros",
       "alavancas": [
-        "Blockchain",
-        "Interoperabilidade",
-        "Custódia"
+        "Sandbox regulatório",
+        "Parcerias GovTech",
+        "Inovação aberta",
+        "Custódia regulada"
       ],
       "iniciativas": [
         "Explorar sandbox e casos com ativos públicos/PPP"
@@ -134,8 +141,10 @@
       "oportunidades": "Melhor precificação e previsão; prevenção a inadimplência.",
       "status": "Exploratória",
       "alavancas": [
-        "Dados sintéticos",
-        "Modelagem"
+        "Laboratórios de experimentação (TEIA)",
+        "Parcerias acadêmicas",
+        "Foresight e radar de tendências",
+        "Infraestrutura de dados"
       ],
       "iniciativas": [
         "Prova de conceito com carteiras piloto"
@@ -152,9 +161,10 @@
       "oportunidades": "Time‑to‑market; reuso de componentes.",
       "status": "Em adoção",
       "alavancas": [
-        "BPM",
+        "Low/No‑Code",
         "RPA",
-        "iPaaS"
+        "Squads de inovação",
+        "Arquitetura orientada a eventos"
       ],
       "iniciativas": [
         "Fábrica de automações internas"
@@ -171,8 +181,10 @@
       "oportunidades": "Programas de cidadania digital; upsell educacional.",
       "status": "Piloto",
       "alavancas": [
-        "Nudges",
-        "Plataformas educacionais"
+        "Parcerias com EdTechs",
+        "Programas de relacionamento",
+        "Foresight e radar de tendências",
+        "Inovação aberta"
       ],
       "iniciativas": [
         "Trilhas com parceiros educacionais"
@@ -189,9 +201,10 @@
       "oportunidades": "Confiança e escalabilidade sustentável.",
       "status": "Em definição",
       "alavancas": [
-        "Responsible AI",
-        "MLOps",
-        "Data Governance"
+        "IA responsável e ética",
+        "Governança de dados",
+        "Compliance by design",
+        "Gestão de riscos"
       ],
       "iniciativas": [
         "Comitê de Governança de Modelos; políticas de uso de IA"
@@ -208,7 +221,9 @@
       "oportunidades": "Onboarding rápido; crédito contextual transfronteiriço.",
       "status": "Exploração regulatória",
       "alavancas": [
-        "Identidade Digital",
+        "Identidade digital",
+        "Parcerias GovTech",
+        "Chamada de startups",
         "Open Data"
       ],
       "iniciativas": [
@@ -227,11 +242,33 @@
       "status": "Prototipação",
       "alavancas": [
         "UX avançada",
-        "APIs de visualização"
+        "Visualização interativa",
+        "APIs de dados",
+        "Parcerias com startups"
       ],
       "iniciativas": [
         "Experimentos em ambientes de atendimento"
       ]
+    },
+    {
+      "id": "inclusao_cultural",
+      "name": "Linguagens e Inclusão Cultural Digital (COP‑30)",
+      "pillar": "Sustentabilidade e cidadania",
+      "impacto": "Amplia acessibilidade linguística e inclusão cultural nos canais digitais da CAIXA.",
+      "riscos": "Baixa interoperabilidade de idiomas; manutenção tecnológica e curadoria contínua.",
+      "oportunidades": "Inclusão social e financeira; destaque em ESG e reputação institucional.",
+      "alavancas": [
+        "Squads de inovação",
+        "Parcerias GovTech",
+        "Inovação aberta",
+        "Foresight e radar de tendências"
+      ],
+      "iniciativas": [
+        "Projeto de Linguagem Indígena CAIXA — COP‑30",
+        "Squad de Inclusão e Acessibilidade"
+      ],
+      "x": 30,
+      "y": 70
     }
   ]
 }
