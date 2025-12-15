@@ -16,14 +16,14 @@ h1{margin:0 0 8px;font-size:24px}
 .legend-badge{display:flex;align-items:center;gap:8px;background:var(--card);border-radius:999px;padding:6px 10px;box-shadow:var(--shadow);font-size:12px}
 .legend-dot{width:10px;height:10px;border-radius:50%}
 
-main{display:grid;grid-template-columns: 1fr 360px;gap:16px;padding:0 20px 20px}
+main{display:grid;grid-template-columns: 1fr 300px;gap:16px;padding:0 20px 20px}
 .map-wrapper{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
-.map-area{position:relative;height:560px;border-radius:12px;background:linear-gradient(180deg,#fff, #fff)}
+.map-area{position:relative;height:720px;border-radius:12px;background:linear-gradient(180deg,#fff, #fff)}
 .grid{position:absolute;inset:16px;border-radius:12px;border:1px dashed #E5E7EB}
 .grid::before,
 .grid::after{content:'';position:absolute;left:0;top:0;right:0;bottom:0;background:
   repeating-linear-gradient(to right, transparent, transparent 120px, rgba(0,0,0,.05) 121px, transparent 122px),
-  repeating-linear-gradient(to bottom, transparent, transparent 110px, rgba(0,0,0,.05) 111px, transparent 112px);
+  repeating-linear-gradient(to bottom, transparent, transparent 120px, rgba(0,0,0,.05) 121px, transparent 122px);
   border-radius:12px;pointer-events:none}
 
 .axis{position:absolute;width:100%;color:var(--muted);font-size:12px}
@@ -37,7 +37,7 @@ main{display:grid;grid-template-columns: 1fr 360px;gap:16px;padding:0 20px 20px}
   padding:10px 14px;border-radius:999px;background:#EEE;color:#fff;font-weight:600;
   box-shadow:0 6px 16px rgba(0,0,0,.12);border:2px solid rgba(255,255,255,.6);
   cursor:grab;user-select:none;transition:transform .1s ease;
-  text-align:center;min-width:140px;max-width:260px}
+  text-align:center;min-width:140px;max-width:260px;opacity:.96}
 .pill:active{cursor:grabbing;transform:scale(.98)}
 .pill small{display:block;font-weight:500;opacity:.95}
 .pill[data-pillar="Cliente no centro"]{background:#A05EB5}
@@ -53,3 +53,7 @@ main{display:grid;grid-template-columns: 1fr 360px;gap:16px;padding:0 20px 20px}
 #copyBtn{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:10px 12px;font-weight:700;box-shadow:var(--shadow);cursor:pointer}
 #positionsOut{height:160px;width:100%;border:1px solid #E5E7EB;border-radius:10px;padding:10px;resize:vertical;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
 footer{padding:8px 20px;color:var(--muted)}
+
+.buttons{display:flex;gap:8px;flex-wrap:wrap}
+button.ghost{background:#ffffff;color:var(--blue);border:1px solid var(--blue)}
+button.ghost:hover{filter:brightness(0.96)}
