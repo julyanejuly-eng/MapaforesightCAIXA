@@ -1,0 +1,55 @@
+
+:root{
+  --bg:#F7F7FA;
+  --card:#FFFFFF;
+  --ink:#1F2D3D;
+  --muted:#6B7280;
+  --blue:#005CA9;
+  --radius:16px;
+  --shadow:0 10px 24px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:14px 20px}
+h1{margin:0 0 8px;font-size:24px}
+.legend-row{display:flex;flex-wrap:wrap;gap:8px}
+.legend-badge{display:flex;align-items:center;gap:8px;background:var(--card);border-radius:999px;padding:6px 10px;box-shadow:var(--shadow);font-size:12px}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+
+main{display:grid;grid-template-columns: 1fr 360px;gap:16px;padding:0 20px 20px}
+.map-wrapper{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.map-area{position:relative;height:560px;border-radius:12px;background:linear-gradient(180deg,#fff, #fff)}
+.grid{position:absolute;inset:16px;border-radius:12px;border:1px dashed #E5E7EB}
+.grid::before,
+.grid::after{content:'';position:absolute;left:0;top:0;right:0;bottom:0;background:
+  repeating-linear-gradient(to right, transparent, transparent 120px, rgba(0,0,0,.05) 121px, transparent 122px),
+  repeating-linear-gradient(to bottom, transparent, transparent 110px, rgba(0,0,0,.05) 111px, transparent 112px);
+  border-radius:12px;pointer-events:none}
+
+.axis{position:absolute;width:100%;color:var(--muted);font-size:12px}
+.x-axis{bottom:0;left:0;height:24px}
+.x-axis span{position:absolute;transform:translateX(-50%);bottom:-6px}
+.y-axis{top:0;left:0;height:100%;width:0}
+.y-axis span{position:absolute;left:-6px;transform:rotate(-90deg) translateX(-50%);transform-origin:left top}
+
+.pills{position:absolute;inset:16px}
+.pill{position:absolute;display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:999px;background:#EEE;color:#fff;font-weight:600;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);border:2px solid rgba(255,255,255,.6);
+  cursor:grab;user-select:none;transition:transform .1s ease;
+  text-align:center;min-width:140px;max-width:260px}
+.pill:active{cursor:grabbing;transform:scale(.98)}
+.pill small{display:block;font-weight:500;opacity:.95}
+.pill[data-pillar="Cliente no centro"]{background:#A05EB5}
+.pill[data-pillar="Eficiência e rentabilidade"]{background:#005CA9}
+.pill[data-pillar="Tecnologia e inovação"]{background:#CEDC00;color:#223}
+.pill[data-pillar="Pessoas, cultura e agilidade"]{background:#FFB549;color:#222}
+.pill[data-pillar="Sustentabilidade e cidadania"]{background:#00B3B8}
+.pill[data-pillar="Atuação em ecossistema"]{background:#FF6F40}
+
+.side-panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:12px}
+.side-panel h2{margin:0 0 6px}
+.side-panel p{margin:0 0 10px;color:var(--muted)}
+#copyBtn{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:10px 12px;font-weight:700;box-shadow:var(--shadow);cursor:pointer}
+#positionsOut{height:160px;width:100%;border:1px solid #E5E7EB;border-radius:10px;padding:10px;resize:vertical;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+footer{padding:8px 20px;color:var(--muted)}

@@ -1,16 +1,21 @@
-# Mapa Foresight CAIXA — Tendências × Pilares
 
-Painel interativo em HTML/CSS/JS para publicar no **GitHub Pages**.
+# Mapa Foresight CAIXA — pacote estático
 
-## Publicação
-1. Suba **estes 3 arquivos** na raiz do repositório (`index.html`, `style.css`, `data.js`).
-2. Em **Settings → Pages**, escolha: `Deploy from a branch` → Branch `main` → Folder `/ (root)`.
-3. Aguarde até 5 minutos e acesse: `https://SEU_USUARIO.github.io/SEU_REPO/`.
+Arquivos:
+- `index.html` — página principal do mapa (grid + eixo horizontal Genesis→Commodity e vertical Visibilidade p/ Cliente).
+- `styles.css` — estilos, incluindo as cores Pantone aproximadas definidas.
+- `data.json` — **EDITÁVEL**. Contém a paleta e a lista de tendências com posições (`x`, `y` de 0 a 100).
+- `script.js` — lógica de renderização, arraste‑e‑solte e painel de detalhes.
 
-## Edição de conteúdos
-- Edite **posições** com `x` e `y` (0 → 100) no `data.js`.
-- Edite **textos** no `data.js` (Impacto, Riscos, Oportunidades, etc.).
-- As cores seguem a paleta Pantone definida: Uva 258C, Azul CAIXA, Limão 382C, Tangerina 1235C, Turquesa 326C, Goiaba 1645C.
+## Como editar
+- Abra `data.json` e altere textos, incluir/remover tendências e ajustar as posições `x` (horizontal) e `y` (vertical).
+- Clique em uma pílula para ver detalhes; arraste para reposicionar. Use o botão **Copiar posições (JSON)** para exportar as coordenadas atualizadas.
 
----
-> Dica: após atualizar arquivos, force o recarregamento no navegador (`Ctrl+Shift+R`) para limpar o cache.
+## Como publicar no GitHub Pages
+- Faça upload dos quatro arquivos em um repositório público.
+- Nas configurações do repositório, ative **Pages** com branch `main` e pasta `/root`.
+- A URL ficará disponível logo após.
+
+## Notas
+- Eixo vertical: 0 (base) = Interface interna; 100 (topo) = Altamente visível.
+- As cores Pantone são aproximações em hex: 258C `#A05EB5`, 382C `#CEDC00`, 1235C `#FFB549`, 326C `#00B3B8`, 1645C `#FF6F40`, Azul CAIXA `#005CA9`.

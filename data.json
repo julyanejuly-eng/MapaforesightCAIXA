@@ -1,0 +1,255 @@
+{
+  "palette": {
+    "Cliente no centro": "#A05EB5",
+    "Eficiência e rentabilidade": "#005CA9",
+    "Tecnologia e inovação": "#CEDC00",
+    "Pessoas, cultura e agilidade": "#FFB549",
+    "Sustentabilidade e cidadania": "#00B3B8",
+    "Atuação em ecossistema": "#FF6F40"
+  },
+  "trends": [
+    {
+      "id": "ia_agents",
+      "name": "Clientes‑Máquina (AI Agents)",
+      "pillar": "Cliente no centro",
+      "x": 22,
+      "y": 18,
+      "impacto": "Automatiza decisões e interações; atendimento e negociação máquina‑a‑máquina.",
+      "riscos": "Ética, transparência, disputa de canais entre agentes; autenticação do cliente‑máquina.",
+      "oportunidades": "Personalização e escala de CX; redução de esforço do cliente; novas receitas baseadas em dados.",
+      "status": "Exploratória com pilotos",
+      "alavancas": [
+        "Open Finance",
+        "APIs públicas",
+        "Identidade Digital"
+      ],
+      "iniciativas": [
+        "Explorar interoperabilidade com chatbots e IVR; preparar roteiros de negociação com agentes."
+      ]
+    },
+    {
+      "id": "genai",
+      "name": "IA Generativa",
+      "pillar": "Tecnologia e inovação",
+      "x": 18,
+      "y": 68,
+      "impacto": "Criação assistida de produtos, relatórios e simulações; aumento de produtividade.",
+      "riscos": "Dependência tecnológica; explicabilidade limitada; vieses.",
+      "oportunidades": "Automação de processos e atendimento; design de jornadas personalizadas.",
+      "status": "Em teste (laboratório)",
+      "alavancas": [
+        "Inteligência aumentada",
+        "Engenharia de prompts",
+        "Governança de modelos"
+      ],
+      "iniciativas": [
+        "Squad de IA – Automação de Processos Internos (2024)"
+      ]
+    },
+    {
+      "id": "pag_invisiveis",
+      "name": "Pagamentos Invisíveis / Programáveis / Embedded",
+      "pillar": "Eficiência e rentabilidade",
+      "x": 74,
+      "y": 44,
+      "impacto": "Conveniência e redução de atrito; pagamentos contextuais e automáticos.",
+      "riscos": "Consentimento e segurança; dependência de parceiros.",
+      "oportunidades": "Pix Automático; bundling com serviços; aumento de conversão.",
+      "status": "Em escala inicial",
+      "alavancas": [
+        "Open Finance",
+        "Parcerias",
+        "APIs"
+      ],
+      "iniciativas": [
+        "Roadmap Pix Automático",
+        "Integração com varejo/serviços públicos"
+      ]
+    },
+    {
+      "id": "open_finance",
+      "name": "Open Finance / Open Data",
+      "pillar": "Atuação em ecossistema",
+      "x": 82,
+      "y": 22,
+      "impacto": "Portabilidade de dados, ofertas comparáveis e personalizadas.",
+      "riscos": "Vazamento/uso indevido de dados; complexidade regulatória.",
+      "oportunidades": "Monetização de dados; novos produtos baseados em IA.",
+      "status": "Prioridade estratégica",
+      "alavancas": [
+        "APIs",
+        "Consentimento granular",
+        "Parcerias Fintech"
+      ],
+      "iniciativas": [
+        "Chamada de Startups – Gerenciador Financeiro PJ (2024)",
+        "Squad de Novos Serviços – Transferência Inteligente"
+      ]
+    },
+    {
+      "id": "financas_verdes",
+      "name": "Finanças Verdes",
+      "pillar": "Sustentabilidade e cidadania",
+      "x": 36,
+      "y": 52,
+      "impacto": "Amplia impacto socioambiental e portfólio verde.",
+      "riscos": "Greenwashing; mensuração fraca de impacto.",
+      "oportunidades": "Linhas de crédito verde; PPPs; taxonomias ESG.",
+      "status": "Em escala",
+      "alavancas": [
+        "ESG by design",
+        "Parcerias público‑privadas"
+      ],
+      "iniciativas": [
+        "Chamada Startups para créditos sustentáveis"
+      ]
+    },
+    {
+      "id": "tokenizacao",
+      "name": "Tokenização de Ativos",
+      "pillar": "Atuação em ecossistema",
+      "x": 46,
+      "y": 40,
+      "impacto": "Liquidez e rastreabilidade; novos mercados e modelos de lastro.",
+      "riscos": "Padrões fragmentados; custódia e interoperabilidade.",
+      "oportunidades": "Receitas de serviços de tokenização; crédito com garantias tokenizadas.",
+      "status": "Pilotos com parceiros",
+      "alavancas": [
+        "Blockchain",
+        "Interoperabilidade",
+        "Custódia"
+      ],
+      "iniciativas": [
+        "Explorar sandbox e casos com ativos públicos/PPP"
+      ]
+    },
+    {
+      "id": "digital_twins",
+      "name": "Digital Twins e Simulações",
+      "pillar": "Tecnologia e inovação",
+      "x": 56,
+      "y": 34,
+      "impacto": "Modelagem de risco, crédito e comportamento; teste de políticas.",
+      "riscos": "Qualidade dos dados; custo computacional.",
+      "oportunidades": "Melhor precificação e previsão; prevenção a inadimplência.",
+      "status": "Exploratória",
+      "alavancas": [
+        "Dados sintéticos",
+        "Modelagem"
+      ],
+      "iniciativas": [
+        "Prova de conceito com carteiras piloto"
+      ]
+    },
+    {
+      "id": "hyperautomation",
+      "name": "Hyperautomation / Low‑No Code",
+      "pillar": "Eficiência e rentabilidade",
+      "x": 30,
+      "y": 62,
+      "impacto": "Automação ponta a ponta; redução de custo e risco operacional.",
+      "riscos": "Acúmulo de débitos técnicos; governança de bots.",
+      "oportunidades": "Time‑to‑market; reuso de componentes.",
+      "status": "Em adoção",
+      "alavancas": [
+        "BPM",
+        "RPA",
+        "iPaaS"
+      ],
+      "iniciativas": [
+        "Fábrica de automações internas"
+      ]
+    },
+    {
+      "id": "edu_gamificada",
+      "name": "Educação Financeira Gamificada",
+      "pillar": "Pessoas, cultura e agilidade",
+      "x": 60,
+      "y": 50,
+      "impacto": "Aumenta engajamento e retenção; autonomia do cliente.",
+      "riscos": "Superficialidade; métricas de aprendizado.",
+      "oportunidades": "Programas de cidadania digital; upsell educacional.",
+      "status": "Piloto",
+      "alavancas": [
+        "Nudges",
+        "Plataformas educacionais"
+      ],
+      "iniciativas": [
+        "Trilhas com parceiros educacionais"
+      ]
+    },
+    {
+      "id": "governanca_novas_tech",
+      "name": "Governança de Novas Tecnologias",
+      "pillar": "Pessoas, cultura e agilidade",
+      "x": 78,
+      "y": 56,
+      "impacto": "Conformidade, segurança e ética para IA, agentes e dados.",
+      "riscos": "Burocratização excessiva; travas à inovação.",
+      "oportunidades": "Confiança e escalabilidade sustentável.",
+      "status": "Em definição",
+      "alavancas": [
+        "Responsible AI",
+        "MLOps",
+        "Data Governance"
+      ],
+      "iniciativas": [
+        "Comitê de Governança de Modelos; políticas de uso de IA"
+      ]
+    },
+    {
+      "id": "passaporte_financeiro",
+      "name": "Passaporte Financeiro Global",
+      "pillar": "Cliente no centro",
+      "x": 34,
+      "y": 24,
+      "impacto": "Portabilidade de perfil e dados financeiros entre instituições.",
+      "riscos": "Privacidade e padronização internacional.",
+      "oportunidades": "Onboarding rápido; crédito contextual transfronteiriço.",
+      "status": "Exploração regulatória",
+      "alavancas": [
+        "Identidade Digital",
+        "Open Data"
+      ],
+      "iniciativas": [
+        "Propostas de interoperabilidade com ecossistemas públicos"
+      ]
+    },
+    {
+      "id": "ra_dados",
+      "name": "Realidade Aumentada p/ Dados Financeiros",
+      "pillar": "Cliente no centro",
+      "x": 48,
+      "y": 72,
+      "impacto": "Compreensão visual de finanças; acessibilidade ampliada.",
+      "riscos": "Adoção e custo; acessibilidade de devices.",
+      "oportunidades": "Dashboards imersivos para PJ; apoio consultivo.",
+      "status": "Prototipação",
+      "alavancas": [
+        "UX avançada",
+        "APIs de visualização"
+      ],
+      "iniciativas": [
+        "Experimentos em ambientes de atendimento"
+      ]
+    },
+    {
+      "id": "defi_daos",
+      "name": "DeFi / Organizações Inteligentes",
+      "pillar": "Atuação em ecossistema",
+      "x": 20,
+      "y": 48,
+      "impacto": "Novas formas de financiamento e governança digital.",
+      "riscos": "Regulação e segurança; volatilidade.",
+      "oportunidades": "Produtos de nicho; parcerias com fintechs.",
+      "status": "Genesis",
+      "alavancas": [
+        "Smart Contracts",
+        "Custódia"
+      ],
+      "iniciativas": [
+        "Monitorar pilotos regulados; POCs com parceiros"
+      ]
+    }
+  ]
+}
