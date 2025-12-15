@@ -1,13 +1,11 @@
 /* ====== Estilos base ====== */
 * { box-sizing: border-box; }
-:root {
-  --azul-caixa:#005CA9;
-}
+:root { --azul-caixa:#005CA9; }
 body { font-family: "Segoe UI", Arial, sans-serif; margin:0; background:#f6f8fb; color:#2d3436; }
 header { background:#fff; border-bottom:3px solid var(--azul-caixa); padding:24px 12px; text-align:center; }
 header h1 { margin:0; color:var(--azul-caixa); font-weight:800; font-size:28px; letter-spacing:0.2px; }
 
-/* Legenda superior (linha única) */
+/* Legenda superior (uma linha) */
 .legenda { display:flex; gap:8px; justify-content:center; flex-wrap:nowrap; overflow:auto; padding-bottom:2px; margin-top:14px; }
 .pilar { background: var(--cor); color:#fff; padding:8px 12px; border-radius:6px; font-weight:700; font-size:13px; white-space:nowrap; }
 
@@ -16,9 +14,10 @@ main { display:flex; gap:20px; padding:20px; align-items:stretch; }
 .mapa { flex: 1 1 68%; position:relative; background:#fff; border-radius:12px; padding:20px 16px 32px; box-shadow:0 6px 16px rgba(0,0,0,.08); min-height:620px; }
 .painel { flex: 1 1 32%; background:#fff; border-radius:12px; padding:20px; box-shadow:0 6px 16px rgba(0,0,0,.08); display:flex; flex-direction:column; gap:8px; }
 
-/* Mini legenda acima do painel (reduzida) */
-.legendinha { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px; }
-.pilar-mini { background: var(--cor); color:#fff; padding:4px 8px; border-radius:999px; font-size:11px; font-weight:700; }
+/* Export box */
+.export { margin-top:10px; display:flex; flex-direction:column; gap:8px; }
+.export button { background:var(--azul-caixa); color:#fff; border:none; padding:10px 12px; border-radius:8px; font-weight:700; cursor:pointer; }
+.export textarea { width:100%; min-height:120px; border:1px solid #dfe5ec; border-radius:8px; padding:8px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
 /* Eixos & grid */
 .eixo-vertical { position:absolute; left:10px; top:12px; writing-mode:vertical-rl; transform:rotate(180deg); color:#7a869a; font-weight:800; letter-spacing:.2px; }
@@ -47,12 +46,12 @@ main { display:flex; gap:20px; padding:20px; align-items:stretch; }
   position:absolute; left:12%; top:50%;
   transform:translate(-50%, -50%);
   background:var(--cor, var(--azul-caixa)); color:#fff;
-  border:none; border-radius:999px; padding:10px 14px;
+  border:none; border-radius:999px; padding:12px 18px;
   font-weight:800; cursor:pointer;
   box-shadow:0 4px 10px rgba(0,0,0,.12);
-  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  transition:transform .1s ease, box-shadow .1s ease, filter .1s ease;
 }
-.pill:hover { transform:translate(-50%, -50%) scale(1.07); box-shadow:0 8px 18px rgba(0,0,0,.18); filter:saturate(1.05); }
+.pill:hover { transform:translate(-50%, -50%) scale(1.06); box-shadow:0 8px 18px rgba(0,0,0,.18); filter:saturate(1.05); }
 
 /* Painel de detalhes */
 .painel h2 { margin:6px 0 8px; color:var(--azul-caixa); font-weight:800; }

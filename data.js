@@ -9,7 +9,7 @@ window.tendencias = [
     status: "Prioridade estratégica.",
     alavancas: "Sandbox, APIs públicas, Parcerias Fintech.",
     iniciativas: "Chamada de Startups Open Finance – Gerenciador Financeiro PJ (2024); Squad de Novos Serviços – Transferência Inteligente.",
-    x: 25, y: 45
+    x: 30, y: 48
   },
   {
     nome: "Finanças Verdes",
@@ -20,7 +20,7 @@ window.tendencias = [
     status: "Prioridade estratégica.",
     alavancas: "ESG by design, Parcerias público-privadas.",
     iniciativas: "Programa de Crédito Sustentável (2024).",
-    x: 62, y: 35
+    x: 60, y: 35
   },
   {
     nome: "IA Generativa",
@@ -31,7 +31,7 @@ window.tendencias = [
     status: "Em fase de teste.",
     alavancas: "Inteligência aumentada, PLN, engenharia de prompts.",
     iniciativas: "Squad de IA – Automação de Processos Internos (2024).",
-    x: 18, y: 60
+    x: 22, y: 70
   },
   {
     nome: "Pagamentos Invisíveis",
@@ -42,7 +42,7 @@ window.tendencias = [
     status: "Prioridade operacional.",
     alavancas: "Open Banking, Parcerias Comerciais, ITP.",
     iniciativas: "PIX Automático e Transferências Inteligentes (2025).",
-    x: 52, y: 55
+    x: 52, y: 58
   },
   {
     nome: "Tokenização de Ativos",
@@ -53,10 +53,10 @@ window.tendencias = [
     status: "Exploratória.",
     alavancas: "Sandbox regulatório, Parcerias GovTech.",
     iniciativas: "Piloto de tokenização de carteiras de crédito (2026).",
-    x: 35, y: 40
+    x: 40, y: 50
   },
   {
-    nome: "Clientes‑Máquina (AI Agents)",
+    nome: "Clientes-Máquina (AI Agents)",
     cor: "#A05EB5", // Uva — Cliente no centro
     impacto: "Atendimento autônomo, decisão assistida e negociação M2M.",
     riscos: "Autenticação, identidade digital e vieses algorítmicos.",
@@ -64,6 +64,6 @@ window.tendencias = [
     status: "Exploratória / Pilotos.",
     alavancas: "Identidade digital, APIs, Sentiment/Emotion AI.",
     iniciativas: "PoC de agentes para jornada PJ e atendimento.",
-    x: 22, y: 30
+    x: 28, y: 38
   }
 ];

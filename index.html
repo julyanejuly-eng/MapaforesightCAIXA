@@ -10,6 +10,7 @@
 <body>
   <header>
     <h1>Mapa Foresight CAIXA — Tendências × Pilares</h1>
+    <!-- LEGENDA: somente no topo, linha única -->
     <div class="legenda">
       <span class="pilar" style="--cor:#A05EB5">Cliente no centro</span>
       <span class="pilar" style="--cor:#005CA9">Eficiência e rentabilidade</span>
@@ -23,7 +24,7 @@
   <main>
     <section class="mapa" aria-label="Mapa de tendências">
       <div class="eixo-vertical">Visibilidade para o Cliente</div>
-      <div class="grid">
+      <div id="grid" class="grid">
         <div class="tick v-top">Altamente visível</div>
         <div class="tick v-bottom">Interface interna</div>
         <div class="tick h-genesis">Genesis</div>
@@ -35,15 +36,6 @@
     </section>
 
     <aside class="painel" aria-live="polite">
-      <div class="legendinha">
-        <span class="pilar-mini" style="--cor:#A05EB5">Cliente no centro</span>
-        <span class="pilar-mini" style="--cor:#005CA9">Eficiência e rentabilidade</span>
-        <span class="pilar-mini" style="--cor:#CEDC00">Tecnologia e inovação</span>
-        <span class="pilar-mini" style="--cor:#FFB549">Pessoas, cultura e agilidade</span>
-        <span class="pilar-mini" style="--cor:#00B3B8">Sustentabilidade e cidadania</span>
-        <span class="pilar-mini" style="--cor:#FF6F40">Atuação em ecossistema</span>
-      </div>
-
       <h2 id="tituloTendencia">Selecione uma tendência</h2>
       <p><strong>Impacto no Cliente:</strong> <span id="impacto">—</span></p>
       <p><strong>Riscos:</strong> <span id="riscos">—</span></p>
@@ -51,68 +43,99 @@
       <p><strong>Status:</strong> <span id="status">—</span></p>
       <p><strong>Alavancas de Inovação:</strong> <span id="alavancas">—</span></p>
       <p><strong>Iniciativas Relacionadas:</strong> <span id="iniciativas">—</span></p>
-      <button id="savePositions">Salvar posições</button>
+      <div class="export">
+        <button id="savePositions">Copiar posições (JSON)</button>
+        <textarea id="output" placeholder="As posições aparecerão aqui..." readonly></textarea>
+      </div>
     </aside>
   </main>
 
   <script src="data.js"></script>
   <script>
-    // Função de renderização das pílulas de tendências
-    (function render() {
-      const cont = document.getElementById('tendencias');
-      cont.innerHTML = '';
-      (window.tendencias || []).forEach((t, i) => {
-        const el = document.createElement('button');
-        el.className = 'pill';
-        el.setAttribute('role', 'listitem');
-        el.textContent = t.nome;
-        el.style.setProperty('--cor', t.cor);
-        el.style.left = t.x + '%';
-        el.style.top = t.y + '%';
-        el.setAttribute('draggable', true);
-        el.dataset.id = i;
+    const grid = document.getElementById('grid');
+    const cont = document.getElementById('tendencias');
 
-        el.addEventListener('dragstart', (e) => {
-          e.dataTransfer.setData('text', e.target.dataset.id);
+    // Carrega posições salvas (opcional)
+    const saved = localStorage.getItem('tendencias_positions');
+    if (saved) {
+      try {
+        const savedArr = JSON.parse(saved);
+        window.tendencias = window.tendencias.map(t => {
+          const s = savedArr.find(x => x.nome === t.nome);
+          return s ? {...t, x: s.x, y: s.y} : t;
         });
-
-        el.addEventListener('dragover', (e) => {
-          e.preventDefault();
-        });
-
-        el.addEventListener('drop', (e) => {
-          const from = e.dataTransfer.getData('text');
-          const to = e.target.dataset.id;
-          if (from !== to) {
-            const fromEl = document.querySelector(`[data-id="${from}"]`);
-            const toEl = document.querySelector(`[data-id="${to}"]`);
-            [fromEl.style.left, toEl.style.left] = [toEl.style.left, fromEl.style.left];
-            [fromEl.style.top, toEl.style.top] = [toEl.style.top, fromEl.style.top];
-            savePositions(); // Salva após cada movimentação
-          }
-        });
-
-        cont.appendChild(el);
-      });
-    })();
-
-    // Função de salvar as posições
-    function savePositions() {
-      const positions = [];
-      document.querySelectorAll('.pill').forEach(el => {
-        positions.push({
-          nome: el.textContent,
-          cor: el.style.backgroundColor,
-          x: parseFloat(el.style.left),
-          y: parseFloat(el.style.top)
-        });
-      });
-      localStorage.setItem('positions', JSON.stringify(positions)); // Salvar no localStorage
-      alert('Posições salvas!');
+      } catch(e){}
     }
 
-    // Ao clicar no botão de salvar, salva as posições
-    document.getElementById('savePositions').addEventListener('click', savePositions);
+    // Renderização das pílulas
+    function render() {
+      cont.innerHTML = '';
+      (window.tendencias || []).forEach((t) => {
+        const el = document.createElement('button');
+        el.className = 'pill';
+        el.type = 'button';
+        el.textContent = t.nome;
+        el.style.setProperty('--cor', t.cor);
+        el.style.left = (t.x ?? 20) + '%';
+        el.style.top = (t.y ?? 50) + '%';
+        // Clique para detalhes
+        el.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          mostrar(t);
+        });
+        // Drag manual (mouse)
+        enableDrag(el, t);
+        cont.appendChild(el);
+      });
+      if (window.tendencias.length) mostrar(window.tendencias[0]);
+    }
+
+    function mostrar(t) {
+      document.getElementById('tituloTendencia').textContent = t.nome;
+      document.getElementById('impacto').textContent = t.impacto || '—';
+      document.getElementById('riscos').textContent = t.riscos || '—';
+      document.getElementById('oportunidades').textContent = t.oportunidades || '—';
+      document.getElementById('status').textContent = t.status || '—';
+      document.getElementById('alavancas').textContent = t.alavancas || '—';
+      document.getElementById('iniciativas').textContent = t.iniciativas || '—';
+    }
+
+    function enableDrag(el, trend) {
+      let dragging = false;
+
+      el.addEventListener('mousedown', (e) => {
+        dragging = true;
+        e.preventDefault();
+      });
+
+      window.addEventListener('mouseup', () => dragging = false);
+
+      window.addEventListener('mousemove', (e) => {
+        if (!dragging) return;
+        const rect = grid.getBoundingClientRect();
+        // posição relativa dentro do grid
+        let px = ((e.clientX - rect.left) / rect.width) * 100;
+        let py = ((e.clientY - rect.top) / rect.height) * 100;
+        // limitar a 2%..98% para manter pílula dentro
+        px = Math.max(2, Math.min(98, px));
+        py = Math.max(2, Math.min(98, py));
+        el.style.left = px + '%';
+        el.style.top = py + '%';
+        // atualiza dados
+        trend.x = px;
+        trend.y = py;
+      });
+    }
+
+    // Exportar posições
+    document.getElementById('savePositions').addEventListener('click', () => {
+      const out = window.tendencias.map(t => ({ nome: t.nome, x: Math.round(t.x), y: Math.round(t.y) }));
+      const json = JSON.stringify(out, null, 2);
+      document.getElementById('output').value = json;
+      localStorage.setItem('tendencias_positions', json);
+    });
+
+    render();
   </script>
 </body>
 </html>
