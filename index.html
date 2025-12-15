@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
+<header class="app-header">
   <h1>Mapa Foresight CAIXA — Tendências × Pilares</h1>
   <div id="legend" class="legend-row"></div>
 </header>
@@ -15,6 +15,7 @@
 <main>
   <section class="map-wrapper">
     <div id="map" class="map-area">
+      <div class="y-title">Visibilidade para o Cliente</div>
       <div class="axis x-axis">
         <span style="left:0%">Genesis</span>
         <span style="left:33%">Custom</span>
@@ -22,9 +23,8 @@
         <span style="left:99%">Commodity</span>
       </div>
       <div class="axis y-axis">
-        <span style="top:2%">Altamente visível</span>
-        <span style="top:50%">—</span>
-        <span style="bottom:2%">Interface interna</span>
+        <span class="y-top">Altamente visível</span>
+        <span class="y-bottom">Interface interna</span>
       </div>
       <div id="grid" class="grid"></div>
       <div id="pills" class="pills"></div>
@@ -34,18 +34,16 @@
   <aside class="side-panel">
     <div id="detail">
       <h2>Selecione uma tendência</h2>
-      <p>Dica: arraste as pílulas para reposicionar. Clique para ver detalhes. Tudo é editável via <code>data.json</code>.</p>
+      <p>Clique para ver detalhes. Arraste as pílulas para ajustar posições. Tudo é editável em <code>data.json</code>.</p>
     </div>
     <div class="buttons">
-      <button id="copyBtn">Copiar posições (JSON)</button>
-      <button id="resetBtn" class="ghost">Resetar posições</button>
+      <button id="resetBtn" class="ghost">🔁 Resetar posições</button>
     </div>
-    <textarea id="positionsOut" placeholder="As posições aparecerão aqui..."></textarea>
   </aside>
 </main>
 
 <footer>
-  <small>Gerado para uso interno da CAIXA — cores Pantone aproximadas conforme especificado pela usuária.</small>
+  <small>Painel estático — cores Pantone aproximadas especificadas pela usuária.</small>
 </footer>
 
 <script src="script.js"></script>

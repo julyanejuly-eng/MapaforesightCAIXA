@@ -1,12 +1,10 @@
 
-# Mapa Foresight CAIXA — v3
+# Mapa Foresight CAIXA — v5 (posicionamento estratégico)
 
-Novidades:
-- **Botão “Resetar posições”**: restaura as coordenadas originais do arquivo `data.json`.
-- Mantém os ajustes da v2 (altura 720px, painel 300px, sem campo “Status”, drag limitado).
-
-Como usar:
-1. Arraste as pílulas; clique em **Copiar posições (JSON)** para exportar coordenadas.
-2. Se algo sair do lugar, clique **Resetar posições** para voltar ao que está em `data.json`.
+- **12 tendências** posicionadas estrategicamente nos eixos Wardley (Genesis→Commodity) e Visibilidade do Cliente.
+- **Pílulas menores** (tamanho conforme referência da usuária).
+- Eixos visíveis e estilo Wardley mantidos.
+- Apenas **um botão**: 🔁 Resetar posições.
+- Arraste suave, sem “pular” para os cantos.
 
 Arquivos: `index.html`, `styles.css`, `data.json`, `script.js`, `README.md`.
